@@ -1,0 +1,32 @@
+
+def binary(n):
+    return format(n & 255, '08b')
+
+
+def calculate(a, b, op):
+    if op == '+':
+        result = a + b
+    else:
+        result = a - b
+
+    print("\nExpression:", a, op, b)
+    print("First operand :", binary(a))
+    print("Second operand:", binary(b))
+
+    if op == '-':
+        print("2's complement of second operand:", binary(-b))
+
+    print("Result in binary :", binary(result))
+    print("Result in decimal:", result)
+
+    if result < -128 or result > 127:
+        print("Overflow: Yes")
+    else:
+        print("Overflow: No")
+
+
+print("8-bit Signed Binary Arithmetic")
+
+calculate(46, 29, '+')
+calculate(-48, -23, '-')
+
