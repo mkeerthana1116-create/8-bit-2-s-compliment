@@ -1,6 +1,0 @@
-<html>
-<style>
-   div{min-height:1em;}
-</style>
-<body><br/>def ROR(num, n):<br/>    print(&quot;\nROR Operation&quot;)<br/>    print(&quot;Original:&quot;, format(num, &#39;08b&#39;))<br/><br/>    for i in range(n):<br/>        last = num &amp; 1<br/>        num = (num &gt;&gt; 1) | (last &lt;&lt; 7)<br/>        print(&quot;Step&quot;, i + 1, &quot;:&quot;, format(num, &#39;08b&#39;))<br/><br/>    print(&quot;Final Result:&quot;, format(num, &#39;08b&#39;))<br/><br/><br/>def RCR(num, carry, n):<br/>    print(&quot;\nRCR Operation&quot;)<br/>    print(&quot;Original:&quot;, format(num, &#39;08b&#39;))<br/>    print(&quot;Initial Carry:&quot;, carry)<br/><br/>    for i in range(n):<br/>        new_carry = num &amp; 1<br/>        num = (num &gt;&gt; 1) | (carry &lt;&lt; 7)<br/>        carry = new_carry<br/><br/>        print(&quot;Step&quot;, i + 1, &quot;:&quot;, format(num, &#39;08b&#39;),<br/>              &quot;Carry:&quot;, carry)<br/><br/>    print(&quot;Final Result:&quot;, format(num, &#39;08b&#39;))<br/>    print(&quot;Final Carry:&quot;, carry)<br/><br/><br/>number = int(&#39;11010101&#39;, 2)<br/><br/>ROR(number, 3)<br/>RCR(number, 0, 3)<br/></body>
-</html>
